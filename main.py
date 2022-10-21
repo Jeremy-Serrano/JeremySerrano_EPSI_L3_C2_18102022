@@ -214,9 +214,9 @@ def exo6():
 #exo6()
 
 def exo_7():
-    names = "Pierre, Julien, Anne, Marie, Julien";
-    namesArray = names.split(', ');
-    namesArray.sort();
+    names = "Pierre, Julien, Anne, Marie, Julien"
+    namesArray = names.split(', ')
+    namesArray.sort()
     print(", ".join(map(str, namesArray)))
 #exo_7()
 
@@ -324,4 +324,197 @@ def Fonction(n):
 
 fruits = [100,52,47,34]
 fruits.sort(key = Fonction)
-print(fruits)
+#print(fruits)
+
+laliste = ["fraise", "orange", "mangue", "banane"]
+laliste.sort() #range par ordre alphabétique
+#print(laliste)
+
+laliste2 = [1, 30, 25, 70]
+laliste2.sort() #range par ordre croissant
+#print(laliste2)
+
+laliste2 = [1, 30, 25, 70]
+laliste2.sort(reverse = True) #range par ordre décroissant
+#print(laliste2)
+
+def myfunc(x):
+    return abs(x-50)
+
+lalistenum = [100,50,67,87,92,23]
+lalistenum.sort(key=myfunc) #range a partir de 50
+#print(lalistenum)
+
+# laliste2num = [100,50,67,87,92,23]
+# laliste2numc = laliste2.copy()
+# print(laliste2numc)
+#
+# liste1 = ["x","y","z"]
+# liste2 = [1,2,3]
+# liste3 = liste1 + liste2
+#print(liste3)
+
+def Alimenter2liste():
+    liste1 = ["x","y","z"]
+    liste2 = [1,2,3]
+
+    for x in liste2:
+        liste1.append(x)
+    print(liste1)
+#Alimenter2liste()
+
+def Alimenter2liste2():
+    liste1 = ["x","y","z"]
+    liste2 = [1,2,3]
+
+    liste1.extend(liste2)
+    print(liste1)
+#Alimenter2liste2()
+
+def Viderliste():
+    liste1 = ["x","y","z"]
+    liste1.clear()
+    print(liste1)
+
+#Viderliste()
+
+#Les tuples=======================
+
+def Testtuple():
+    montuple = ("Pomme", "Kiwi", "Citron")
+    print(montuple)
+    print(type(montuple)) #retourne le type
+    print(len(montuple)) #retourne la longueur
+
+#Testtuple()
+
+#créer un tuple avec un objet
+#montuple = ("poire",) #obligation de la virgule pour avoir un tuple sinon on a un string
+#print(type(montuple))
+
+#On peut mélanger les types et avoir des tuples constitués de booléens, de chaines, d'entier etc..
+#le tuple est une classe comme les autres types en python
+#faire appel au constructeur du tuple
+
+# test = tuple(("pomme", "kiwi", "mangue"))
+# print(test)
+# print(test[1]) #retourne poire
+# print(test[-1])#retourne le dernier élément
+
+#montuple = ("Pomme", "kiwi", "Citron", "Banane", "Fraise", "Melon", "Cerise")
+#print(montuple[-4: -1])
+#on a pas le dernier élément puis on aura Banane, Fraise, Melon
+
+# montuple = ("Pomme", "kiwi", "Citron", "Banane", "Fraise", "Melon", "Cerise")
+# fruit = str(input("Fruits :"))
+# if fruit in montuple:
+#     print("Oui")
+
+# montuple = ("Pomme","Kiwi","Citron")
+# a = list(montuple)
+# #a[1] = "Fraise"
+# a.append("Pastetque") #ajoute un élément à la fin
+# montuple = tuple(a)
+# print(montuple)
+
+#Ajouter un tuple a un tuple
+# montuple = ("Pomme","Kiwi","Citron")
+# a = ("Fraise",)
+# montuple += a
+# print(montuple)
+
+#Supprimer un élément
+# montuple = ("Pomme","Kiwi","Citron")
+# a = list(montuple)
+# a.remove("Pomme")
+# montuple = tuple(a)
+# print(montuple)
+
+
+#supprimer le tuple en entier
+# montuple = ("Pomme","Kiwi","Citron")
+# del montuple
+# print(montuple)
+
+#récuperer les éléments du tuples dans des variables
+# montuple = ("Pomme", "Kiwi", "Citron")
+# (a,b,c) = montuple
+# print(a)
+# print(b)
+# print(c)
+
+#récuperer les éléments du tuples dans des variables
+# montuple = ("Pomme", "Kiwi", "Citron")
+# (a,b,*c) = montuple
+# print(a)
+# print(b)
+# print(c)
+
+#parcourir un tuple via une liste
+def parcourirlistetuple():
+    montuple = ("Pomme", "Kiwi", "Citron", "mangue")
+    for i in range(len(montuple)):
+        print(montuple[i])
+
+#parcourirlistetuple()
+
+def parcourirtuplewhile():
+    x=0
+    montuple = ("Pomme", "Kiwi", "Citron")
+    while x < len(montuple):
+        print(montuple[x])
+        x+=1
+
+#parcourirtuplewhile()
+
+# montuple1 = ("Pomme", "Kiwi", "Citron")
+# montuple2 = (4,5,6)
+# montuple3 = montuple1 + montuple2
+# print(montuple3)
+# montuple4 = montuple1 *3
+# print(montuple4)
+
+def Nombres_pairs():
+    Maliste = []
+    x = 0
+    while x < 101:
+        if x %2 == 0:
+            Maliste.append(x)
+        x+=1
+    else :
+            x+=1
+    print(Maliste)
+#Nombres_pairs()
+
+def LancerAleatoire():
+    Maliste = []
+    import random
+    moyenne = 0
+    x = 0
+    y = int(input("Combien de lancé de dés ? "))
+    while x < y :
+        Maliste.append(random.randrange(1, 7))
+        moyenne += Maliste[x]
+        x+=1
+    moyenne = moyenne/ y
+    print(Maliste)
+    print("ma moyenne est de : ",moyenne)
+#LancerAleatoire()
+
+def CompterNombreOccurence():
+    phrase = "Salut ca va ?"
+    print(phrase)
+    compteur = 0
+    lettre = str(input("quelle lettre voulez vous compter ? "))
+    for x in range(len(phrase)):
+
+        if lettre in phrase[x].lower():
+            compteur+=1
+
+    print("Il y'a",compteur, lettre)
+
+#CompterNombreOccurence()
+
+def ExtensionNombreOccurence():
+    print(1)
+ExtensionNombreOccurence()
